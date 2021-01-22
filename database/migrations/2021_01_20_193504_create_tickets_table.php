@@ -16,8 +16,8 @@ class CreateTicketsTable extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedSmallInteger('type_id')->nullable();
-            $table->unsignedSmallInteger('priority_id')->required();
+            $table->unsignedBigInteger('type_id')->nullable();
+            $table->unsignedBigInteger('priority_id')->required();
             $table->unsignedBigInteger('requester_user_id')->required();
             $table->string('name')->required();
 
