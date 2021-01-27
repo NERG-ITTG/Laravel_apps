@@ -1,8 +1,12 @@
 <?php
 
 namespace Database\Seeders;
-
+//use App\Models\Entities\Admin\User;
 use Illuminate\Database\Seeder;
+//use Illuminate\Database\Eloquent\Model;
+//use Illuminate\Support\Facades\DB;
+//use Illuminate\Support\Facades\Hash;
+//use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +17,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+       // Model ::unguard();
+
+       // try{
+         //   Schema::disableForeignKeyConstrainsts();
+
+            $this->call(UsersTableSeeder::class);
+
+             //Schema::enableForeignKeyConstrainsts();
+
+       // }catch (\Throwable $th){
+            //return $th->getMessage();
+
+        //}
+        //\App\Models\Entities\Admin\User::factory(10)->create();
+         //factory(User::class, 10)->create();
+
+       // $this->call(UsersTableSeeder::class);
     }
 }
