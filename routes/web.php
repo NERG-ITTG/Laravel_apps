@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\Admin\TicketsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,12 +14,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('test');
-});
+    Route::get('/', function () {
+        return view('test');
+    });
 
 Route::get('administracion/usuarios',[UsersController::class, 'index'])->name('admin.user.index');
+Route::get('administracion/usuarios/create', [UsersController::class, 'create'])->name('admin.user.create');
 Route::get('administracion/usuarios/{user}',[UsersController::class, 'show'])->name('admin.user.show');
+
+
+
+
+Route::get('administracion/tickets',[TicketsController::class, 'index'])->name('admin.ticket.index');
+Route::get('administracion/tickets/create', [TicketsController::class, 'create'])->name('admin.ticket.create');
+Route::post('administracion/tickets/store', [TicketsController::class, 'store'])->name('admin.ticket.store');
 //Route::get('administracion/usuarios', 'Admin\UsersController@index');
 
 //Route::prefix('administracion')->namespace('Admin')->name('admin.')->group(function(){

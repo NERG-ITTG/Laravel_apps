@@ -10,6 +10,7 @@
 
 
 @section('content')
+
 <div class="row">
           <div class="col-md-3">
 
@@ -18,14 +19,18 @@
               <div class="card-body box-profile">
                 <div class="text-center">
                   <img class="profile-user-img img-fluid img-circle"
-                       src="../../dist/img/user4-128x128.jpg"
+                       src="img/user4-128x128.jpg"
                        alt="User profile picture">
+                       
                 </div>
 
                 <h3 class="profile-username text-center">{{$row->name.''.$row->lastname}}</h3>
 
                 <p class="text-muted text-center">{{$row->username}}</p>
-
+                <p class="text-muted text-left"><h3>Crea un turno</h3></p>
+                <a href="{{ route('admin.ticket.create')}}" title="crear turno"> 
+                 <i class="fas fa-ticket-alt"></i>
+              </a>
                
               </div>
               <!-- /.card-body -->

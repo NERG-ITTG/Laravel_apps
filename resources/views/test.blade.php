@@ -8,7 +8,7 @@
 
 @section ('title')
 
- Desde test
+Bienvenido
 
 @endsection
 
@@ -16,7 +16,7 @@
 @section('content')
  <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Title</h3>
+          <h3 class="card-title">Sistema de turnos</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -28,11 +28,11 @@
           </div>
         </div>
         <div class="card-body">
-          Start creating your amazing application!
+          Presiona tiket para crear uno o  usauarios en administracion para ver la lista de ususarios!
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          Footer
+          Cusrso de Framework
         </div>
         <!-- /.card-footer-->
     </div>

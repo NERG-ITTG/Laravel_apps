@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\Models\Entities\Admin\User;
+use App\Models\Entities\Admin\Ticket;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class UsersController extends Controller
+class TicketsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,14 +13,12 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { 
-        // $users = User::paginate(3);
-        $users = User::all();
+    {
+        $tickets = Ticket::all();
        
-        return view('admin.user.index', [
-           'users' => $users
+        return view('admin.ticket.index', [
+           'tickets' => $tickets
         ]);
-        //return view('admin.user.index', compact('rows')); $users = User::paginate(15);
     }
 
     /**
@@ -30,11 +28,8 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('admin.user.create');
-        //[
-          //  'users' => $users
-        // ]);
-
+        
+        return view('admin.ticket.create');
     }
 
     /**
@@ -45,7 +40,18 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = request()->all();
+
+        Ticket::create([
+            'id' =>$data [id],
+            'type_id' =>$data [type_id],
+            'priority_id' =>$data [priority_id],
+            'requester_user_id' =>$data [requester_user_id],
+            'flag_status' =>$data [flag_status],
+           
+
+        ]);
+        return redirect()->route('admin.ticket.index');
     }
 
     /**
@@ -56,13 +62,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $row = User::where('id', $id)->first();
-
-        
-        return view('admin.user.show', [
-            'row' => $row
-        ]);
-       
+        //
     }
 
     /**

@@ -304,10 +304,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../gallery.html" class="nav-link">
+            <a href="{{ route('admin.ticket.create')}}" title="crear turno" class="nav-link">
               <i class="nav-icon fa fa-ticket-alt"></i>
               <p>
-                Turnos
+                Crear Turnos
+              </p>
+              <a href="{{ route('admin.ticket.index')}}" title="turno" class="nav-link">
+              <i class="nav-icon fa fa-ticket-alt"></i>
+              <p>
+                lista de Turnos
               </p>
             </a>
           </li>
@@ -349,7 +354,7 @@
           </li>
           <li class="nav-header">Administracion</li>
           <li class="nav-item">
-            <a href="../calendar.html" class="nav-link">
+            <a href="{{ route('admin.user.index')}}" title="usuarios" class="nav-link">           
               <i class="nav-icon fa fa-users"></i>
               <p>
                 Ususarios

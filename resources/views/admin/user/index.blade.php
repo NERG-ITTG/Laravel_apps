@@ -10,22 +10,26 @@
 
 
 @section('content')
+
  <div class="card">
         <div class="card-header">
           <h3 class="card-title">Lista de usuarios</h3>
 
           <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+         
+              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
               <i class="fas fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+               </button>
+              <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
               <i class="fas fa-times"></i>
-            </button>
-            <a href="" title="Crear usuario">
-              <i class="fa fa-plus"></i>
-            </button>
-
-          </div>
+              </button>
+              <a href="{{ route('admin.user.create')}}" title="crear usuario"> 
+                 <i class="fas fa-plus"></i>
+              </a>
+            
+              
+           
+           </div>
         </div>
         <div class="card-body">
 
